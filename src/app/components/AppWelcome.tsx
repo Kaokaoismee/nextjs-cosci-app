@@ -1,5 +1,6 @@
 'use client'
-
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 type AppWelcomeProps = {
     headTitle: string;
     isShow: boolean;
@@ -16,7 +17,9 @@ export default function AppWelcome({headTitle, isShow}: AppWelcomeProps) {
     return(
        <>
          <h1>{headTitle}</h1>
+         <p>{process.env.NEXT_PUBLIC_APP_NAME}</p>
          <p>{title.toUpperCase()}</p>
+         <Button onClick={handleClick}>Click Me</Button>
          <button className="bg-blue-700 p-3 m-3 text-white rounded-lg" onClick={handleClick}>กดได้เลย</button>
          {currentYear}
          {
